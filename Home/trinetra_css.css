@@ -1,0 +1,96 @@
+
+/*colors : 
+no color : #00FFFFFF
+blue : #0000FF
+cyan : #03A9F4
+green : #4CAF50
+white : #fff
+ black :#0A0801
+
+
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;/*  Hide scrollbars */
+}
+br{
+    background-color: blue;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh; /* 100% of the viewport height */
+    border: none; /* Remove iframe border */
+}
+
+.top_rectangle{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #03A9F4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width : 100%;
+    height : 50px;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center;
+}
+
+.left_rectangle{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #F0F8FF;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width : 15%;   /* 15% */
+    height: 100vh; /* Set the height of the div to the full viewport height */
+    border: none;
+}
+.right_rectangle{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width : 85%;
+    height: 100vh;
+    border: none;
+}
+.title {
+    display: inline-block; /* This makes the element a block-level element but allows it to be treated as an inline element */
+}
+.side_menu{
+    display: inline-block;
+    padding: 8px 20px;/* top and bottom = 8 and left and right 20*/
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #03A9F4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width : 100%;
+  border-radius: 15px;
+}
+
+.test_menu{
+    display: inline-block;
+    padding: 8px 20px;/* top and bottom = 8 and left and right 20*/
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width : 100%
+}

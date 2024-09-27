@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trintra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.MyButton{ display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer; border-radius: 15px;
+  transition: all 0.3s ease;  }
+</style>
+</head>
+<body>
+    <script>
+            window.addEventListener('resize', resizeIframe);
+            window.addEventListener('load', resizeIframe);
+            function resizeIframe() {
+                var test_p = document.getElementsByClassName("test_p");
+                var button = document.getElementsByClassName('MyButton');
+                var button_width = ((window.innerWidth) / 5.5);
+
+                for (var i = 0; i < button.length; i++) {
+                    button[i].style.width = button_width + "px";
+                }
+                var span_width1 = document.getElementsByClassName('101');
+                var remaining_span_width1 = (window.innerWidth - (button_width * 5))/6;
+
+                for (var i = 0; i < span_width1.length; i++) {
+                    span_width1[i].style.width = remaining_span_width1 + "px";
+
+                }
+
+            }
+        </script>
+<form style="background-color: #F0F8FF">
+
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button0' value='Keep'  onclick="window.open('https://keep.google.com/u/0/#home','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button1' value='Youtube'  onclick="window.open('https://www.youtube.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button2' value='Whatsapp'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fweb.whatsapp.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3jiRqvp2OpAWxXuuuzJDzH','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button3' value='Android.docx'  onclick="window.open('https://docs.google.com/document/d/19gNlBBk4-rhNL4EDeBehNCAAUPI83clA/edit?usp=drive_link&amp;ouid=102594549007238676588&amp;rtpof=true&amp;sd=true','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button4' value='Anime'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Ftrinetra3.netlify.app%2FAnime&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1aZpzVOkH2qP8Q_YYEu4MN','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button5' value='Gmail'  onclick="window.open('https://mail.google.com/mail/u/0/#inbox','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button6' value='Drive'  onclick="window.open('https://drive.google.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button7' value='Contact'  onclick="window.open('https://contacts.google.com/?hl=en&amp;tab=mC','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button8' value='Passwords'  onclick="window.open('https://docs.google.com/spreadsheets/d/1N5CZcvIurwHYiasQrkrudbQyVfMZsbqUVYtBIGHf2r8/edit#gid=0','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button9' value='Google Passwords'  onclick="window.open('https://passwords.google.com/?ep=1&amp;hl=en&amp;rapt=AEjHL4MDs3XM9M9Oj9eHxuRoY3UeczaOXM9dc5bCeXFfzvruKK--bJspesSqbEdsr6w_WoV1-mTn4pNXDzLDChodJ5P6mVVwaA&amp;standalone=false','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button10' value='Google Translator'  onclick="window.open('https://www.google.com/search?q=google+translate&amp;oq=go&amp;aqs=chrome.1.0i67i131i433j35i39j69i57j35i39j0i67i433j0i67l2j0i67i131i433j46i67j0i67.3805j0j15&amp;sourceid=chrome&amp;ie=UTF-8','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button11' value='Java Online Compiler'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.programiz.com%2Fjava-programming%2Fonline-compiler%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2KK8rnwAQYAYoet03e1FNp','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button12' value='LeetCode'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fleetcode.com%2Fproblemset%2Fall%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw28dQkvXxIqc_2OYo93yhlm','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button13' value='Google Cloud'  onclick="window.open('https://console.cloud.google.com/getting-started','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button14' value='VI Dashboard'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.myvi.in%2Fselfcare%2Fprepaid-dashboard&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2i4YgsfO44PoEoSTKU3WCB','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button15' value='ECAP N'  onclick="window.open('http://www.google.com/url?q=http%3A%2F%2F119.235.51.91%2Fecap%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3nzsTezTHWIkgXJjbVUvSw','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button16' value='Netlify'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.netlify.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw16DxQASg6Bl-O8zo3teO9A','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button17' value='way2sms'  onclick="window.open('http://www.google.com/url?q=http%3A%2F%2Fwww.way2sms.com%2Fsend-sms&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3hF2XbxgXkXPnuIZXOD1P4','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button18' value='Instagram Pending Request'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Faccess_tool%2Fcurrent_follow_requests&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0OSmmQEiM37q5l5Y9C39DQ','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button19' value='logo maker'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.logomaker.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1CIp4JZhP3E--a4rVc2rYK','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button20' value='Icons8'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Ficons8.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0dkVXQsOWj57fNTCQqrjYY','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button21' value='Build app'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fcreator.kodular.io%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0D3LbjVcGrQPMEZaZatRg1','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button22' value='Firebase'  onclick="window.open('https://console.firebase.google.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button23' value='PuravidaApps'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fpuravidaapps.com%2Fextensions.php&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2Niv1YgH8VXAr9udEtizqG','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button24' value='Bitly'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fbitly.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1lPNg5dtYoFXYuGwA1EkVJ','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button25' value='Makeroid'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.makeroid.io%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2oMwkJJoFu3iiXhkXPwjm4','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button26' value='makeroid tutorial'  onclick="window.open('http://www.google.com/url?q=http%3A%2F%2Fdocs.makeroid.io%2Fcomponents%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3s_LJ_YPUx0xsgLM83pgc1','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button27' value='Airtable'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fairtable.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw00uAtwGfxoVhTCuc0guvCZ','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button28' value='Material Icon Names'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.angularjswiki.com%2Fangular%2Fangular-material-icons-list-mat-icon-list%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1WNrYLpTXo6-o6KPPt-J8q','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button29' value='One signal'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fapp.onesignal.com%2Fapps%2Fb60778e8-5719-40de-9229-86e5bc47d3ca%2Fnotifications%2Fnew&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3nv4u3JlW4dc6g3RuEkS6c','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button30' value='Remove BG'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.remove.bg%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3N6jvi1MsAerxbmimlPuRZ','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button31' value='Revit city'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.revitcity.com%2Fjoin.php&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw07wGqPZPylWdLO_lGHeEf-','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button32' value='Science hub'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsci-hub.tw%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1CTkjfE-mv1aQZs1o-MDIJ','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button33' value='Science Directory'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.sciencedirect.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1NdQG85Z-OhaqKgUbkEQqN','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button34' value='free calls'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fwww.numlookup.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1SGVr6Fw8r7NrmqlJ26_GZ','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button35' value='Airdroid'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fweb.airdroid.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw33-kmPOiCdGEDRGGfhs63P','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button36' value='App Assets'  onclick="window.open('https://drive.google.com/drive/folders/1MVJnudYGgGVxT0pjNkeSGnl7QHJhkjaG','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button37' value='K App Folder'  onclick="window.open('https://drive.google.com/drive/folders/1egXGJ7Q-BG8Hm6YoC9QpsGKLaE9etGtf','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button38' value='Android Apps'  onclick="window.open('https://drive.google.com/drive/folders/1HjOp7aUjCc4Vf4oxo0qFwoohMAmchtK-','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button39' value='Tokens List'  onclick="window.open('https://docs.google.com/document/d/14cDf3p6eIPkwIy7hmAozgUFzj7dsVF3etnR8l7OkUoM/edit','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button40' value='Google Resume'  onclick="window.open('https://www.google.co.in/docs/about/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button41' value='Eagle Console'  onclick="window.open('https://eagle-f4c3a.firebaseio.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button42' value='Logins Console'  onclick="window.open('https://logins-aec50.firebaseio.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button43' value='VIBHA Console'  onclick="window.open('https://vibha-a5435.firebaseio.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button44' value='Trinetra'  onclick="window.open('https://trinetra-116.firebaseio.com/','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button45' value='VISTA Console'  onclick="window.open('https://vista-da9d2.firebaseio.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button46' value='online-classes Console'  onclick="window.open('https://online-classes-5c8ff.firebaseio.com/','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button47' value='Govt Websites'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftrinetram%2Fgovt-websites%3Fauthuser%3D0&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3ZEllFrkj3wSPCanjNUkot','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button48' value='Education'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftrinetram%2Feducation%3Fauthuser%3D0&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2Gct8yxF-YlFPkC4rl9caB','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button49' value='Google'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftrinetram%2Fgoogle%3Fauthuser%3D0&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2Qf73wEFCk-W_UAfRkqIR1','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button50' value='Others'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftrinetram%2Fothers%3Fauthuser%3D0&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw12pZTXxx2zOb2JY3qQMP9H','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button51' value='Apps'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftrinetram%2Fapps%3Fauthuser%3D0&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0B8dmHXtC-1Qv2vUk8fESs','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button52' value='Govt Edit'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fs%2F1ntypw5VZ1Rr4YJ4v3Kdzpuij8EtFjfCg%2Fp%2F1v6Z17c07jdlEZP4uYpDp56NWbc7_aNr5%2Fedit&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2vY345sp6vbZjy4EaJ3UvP','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button53' value='Education Edit'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fs%2F1ntypw5VZ1Rr4YJ4v3Kdzpuij8EtFjfCg%2Fp%2F1VuMxD6AM_y0TlCXD0YdOihryvwab6dnx%2Fedit&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0_jjCaT3oMqgFwBfd42tHE','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button54' value='Google Edit'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fs%2F1ntypw5VZ1Rr4YJ4v3Kdzpuij8EtFjfCg%2Fp%2F1dmBGpA-8zrQy6eozmMjpE6Ma5LYY1bm9%2Fedit&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3sCZlrI5OOX78p9WmgzVqX','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button55' value='Other Edit'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fs%2F1ntypw5VZ1Rr4YJ4v3Kdzpuij8EtFjfCg%2Fp%2F16JFpKl0ozjLOR2mTdAWZXCuyc9LlVE-2%2Fedit&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2M5W5xZiQvbQPpXtvwIDoJ','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button56' value='App Edit'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fs%2F1ntypw5VZ1Rr4YJ4v3Kdzpuij8EtFjfCg%2Fp%2F1IbyeNAit36SRWIwdZmrvho03sZZsGgKr%2Fedit&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0UXU84avbnZjJUNxNDu31D','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button57' value='Eagle Edit'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fs%2F1ntypw5VZ1Rr4YJ4v3Kdzpuij8EtFjfCg%2Fp%2F1dqvTTuALhVe6f8qSHKu5tLnKLtss-PEf%2Fedit&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw13pFTmuHL6Pmh1FYi4oc7a','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button58' value='MyTraffic Website'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Ftraffic2022.netlify.app%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3lPRK-fsduhvrE4q-DcyxZ','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button59' value='My Resume Website'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fvarun179.netlify.app%2Fhome&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0hVnzsnBFlNZDe5eJwaR1I','_blank')">
+<span class="101"></span>
+</div>
+<br>
+<div style="display: flex; width :100hv; ">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button60' value='My Trinetra Website'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Ftrinetra3.netlify.app%2F&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2Jtiemqe3-WYuIzjtUsXiL','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button61' value='Traffic Repository'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fvarunram82786%2FTraffic2022.git&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw2YBc13vYhtfSKLzVt3OmBq','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button62' value='Trinetra Repository'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fvarunram82786%2FTrinetra.git&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1ETdCvHyaPy5yrGuvshpHA','_blank')">
+<span class="101"></span>
+<input type='button'  class='MyButton'   id='Button63' value='Eagle Edit'  onclick="window.open('https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fs%2F1ntypw5VZ1Rr4YJ4v3Kdzpuij8EtFjfCg%2Fp%2F1dqvTTuALhVe6f8qSHKu5tLnKLtss-PEf%2Fedit&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw13pFTmuHL6Pmh1FYi4oc7a','_blank')">
+</form>
+</body>
+</html>

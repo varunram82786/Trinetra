@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!--        <script>
+            window.open("Home/Trinetra.html",'_self');
+        </script>-->
+
+<button class="btn btn-primary"  onclick="click1()">Edit</button>
+
+<script>
+
+    const params = {
+        action: 'insert',
+        mobile: '9603127317',
+        time: new Date(),
+        password: 'v'
+    };
+
+  //   const url = 'http://192.168.1.3:8081/product/barcode_list';
+     const url = 'http://localhost:8081/product/barcode_list';
+
+   //  const url = 'https://dev-resto-api.manyantan.com/';
+ get(url,'GET');
+
+
+
+    function click1() {
+
+    postJson(url, params,'POST');
+  //  alert('Done');
+    }
+
+
+
+
+    async function postJson(url, params,methodType) {
+        try {
+            const response = await fetch(url, {
+                method: methodType
+                        ,contentType: 'application/json',
+                        headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+                        },
+                        body: JSON.stringify(params),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const sourceCode = await response.text();
+            console.log('postJson:', sourceCode);
+            alert("" + sourceCode);
+
+            return sourceCode;
+        } catch (error) {
+            console.error('postJson:', error.message);
+            return null;
+        }
+    }
+
+
+
+
+
+    async function get(url,methodType) {
+        try {
+            console.log('varun SourceCodeUrl:', url);
+
+            const response = await fetch(url, {
+                method: methodType,
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const sourceCode = await response.text();
+            console.log('varun get:', sourceCode);
+
+            return sourceCode;
+        } catch (error) {
+            console.error('varun get:', error.message);
+            return null;
+        }
+    }
+
+</script>
+
+</body>
+</html>
+

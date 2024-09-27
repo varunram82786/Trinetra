@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encrption</title>
+    </head>
+    <body>
+
+        <H1>Encryption code</H1>
+        <label for="textInput">Enter text:</label>
+        <br>
+        <input type="text" id="textInput">
+        <button onclick="convertTextToCode()">Convert To Code</button>
+        <p id="textParagraph"></p>
+        <br><br>
+        <label for="textInput">Enter code:</label>
+        <br>
+        <input type="text" id="codeInput">
+        <button onclick="convertCodeToText()">Convert To Text</button>
+        <p id="codeParagraph"></p>
+        <script>
+            function convertTextToCode() {
+                var text = document.getElementById('textInput').value;
+                var url = "https://script.google.com/macros/s/AKfycbzvWabeaDsWbDiiidZ-7Ew93Oxnkb3tr7Ddcfk1k4mOsz2JSZq1fFl5NETGEB8JfOPG/exec?action=convertTextToCode&text=" + encodeURIComponent(text);
+                get(url);
+            }
+
+            function convertCodeToText() {
+                var text = document.getElementById('codeInput').value;
+                var url = "https://script.google.com/macros/s/AKfycbzvWabeaDsWbDiiidZ-7Ew93Oxnkb3tr7Ddcfk1k4mOsz2JSZq1fFl5NETGEB8JfOPG/exec?action=convertCodeToText&code=" + encodeURIComponent(text);
+                get(url);
+            }
+
+            async function get(url) {
+                try {
+                    console.log('Url:', url);
+
+                    const response = await fetch(url, {
+                        method: 'GET',
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    const responseText = await response.text();
+                    console.log('response:', responseText);
+
+                    if (url.includes('text')) {
+                        document.getElementById('textParagraph').innerHTML = 'Code for ' + document.getElementById('textInput').value + ' : ' + responseText;
+                    } else if (url.includes('code')) {
+                        document.getElementById('codeParagraph').innerHTML = 'Text for ' + document.getElementById('codeInput').value + ' : ' + responseText;
+                    }
+
+                    return responseText;
+                } catch (error) {
+                    console.error('get:', error.message);
+                    alert(error.message);
+                    return null;
+                }
+            }
+        </script>
+
+    </body>
+</html>
