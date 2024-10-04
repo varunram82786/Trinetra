@@ -55,3 +55,6 @@ fastlane/test_output
 .idea/emulatorDisplays.xml
 .idea/deploymentTargetDropDown.xml
 .idea/vcs.xml
+
+info2.html
+

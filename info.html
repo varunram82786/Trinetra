@@ -4,25 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloaders</title>
+    <title>Collections</title>
     <link rel="stylesheet" href="../Trinetra/bootstrap/bootstrap_v5.3.0-alpha3.css">
     <script src="../Trinetra/bootstrap/bootstrap_5.3.0-alpha3.js"></script>
+    <style>
+        /* Gradient background */
+        body {
+            background: linear-gradient(135deg, #f06, #00d2ff);
+            min-height: 100vh;
+            color: #fff; /* Default text color set to white */
+        }
+
+        h1, h2 {
+            color: #fff; /* Heading colors */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            color: #fff; /* Card text color set to white */
+        }
+
+        .btn {
+            font-weight: bold;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            color: white; /* Button text color */
+        }
+
+        .container {
+            padding-top: 50px;
+        }
+
+    </style>
 </head>
 
-<body class="bg-light">
+<body>
 
 <div class="container py-5">
-    <h1 class="text-center mb-4">Download Your Favorite Content</h1>
+    <h1 class="text-center mb-4">Welcome to My Collection</h1>
 
     <!-- Websites Section -->
     <h2 class="text-center mb-4">Websites</h2>
     <div class="row justify-content-center">
+
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #3498DB;">
                 <div class="card-body text-center">
                     <h5 class="card-title">Trinetra</h5>
                     <p class="card-text">Discover a collection of useful websites for various needs.</p>
-                    <button class="btn btn-primary" onclick="window.open('https://trinetra3.netlify.app/', '_blank')">
+                    <button class="btn" style="background-color: #1ABC9C;" onclick="window.open('https://trinetra3.netlify.app/', '_blank')">
                         Explore Trinetra Websites
                     </button>
                 </div>
@@ -30,11 +71,11 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #9B59B6;">
                 <div class="card-body text-center">
                     <h5 class="card-title">Moon Finder</h5>
                     <p class="card-text">Find the moon’s direction relative to east at any time.</p>
-                    <button class="btn btn-success" onclick="window.open('http://ec2-52-91-67-36.compute-1.amazonaws.com/moon', '_blank')">
+                    <button class="btn" style="background-color: #8E44AD;" onclick="window.open('http://ec2-52-91-67-36.compute-1.amazonaws.com/moon', '_blank')">
                         Find Moon Direction
                     </button>
                 </div>
@@ -42,11 +83,11 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #E74C3C;">
                 <div class="card-body text-center">
                     <h5 class="card-title">YouTube Downloader</h5>
                     <p class="card-text">Download YouTube videos quickly and easily.</p>
-                    <button class="btn btn-danger" onclick="window.open('http://ec2-52-91-67-36.compute-1.amazonaws.com/youtube', '_blank')">
+                    <button class="btn" style="background-color: #C0392B;" onclick="window.open('http://ec2-52-91-67-36.compute-1.amazonaws.com/youtube', '_blank')">
                         Download YouTube Videos
                     </button>
                 </div>
@@ -54,27 +95,29 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #F39C12;">
                 <div class="card-body text-center">
                     <h5 class="card-title">Anime Downloader</h5>
                     <p class="card-text">Download full anime episodes with a single click.</p>
-                    <button class="btn btn-warning" onclick="window.open('http://ec2-52-91-67-36.compute-1.amazonaws.com/anime', '_blank')">
+                    <button class="btn" style="background-color: #E67E22;" onclick="window.open('http://ec2-52-91-67-36.compute-1.amazonaws.com/anime', '_blank')">
                         Download Anime Episodes
                     </button>
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- Apps Section -->
     <h2 class="text-center mb-4">Apps</h2>
     <div class="row justify-content-center">
+
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #2ECC71;">
                 <div class="card-body text-center">
                     <h5 class="card-title">YouTube Clone</h5>
                     <p class="card-text">Watch YouTube videos without ads and download them easily.</p>
-                    <button class="btn btn-info" onclick="window.open('https://trinetra3.netlify.app/Apps/YouTube.apk', '_blank')">
+                    <button class="btn" style="background-color: #27AE60;" onclick="window.open('https://trinetra3.netlify.app/Apps/YouTube.apk', '_blank')">
                         Download YouTube Clone App
                     </button>
                 </div>
@@ -82,11 +125,11 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #1ABC9C;">
                 <div class="card-body text-center">
                     <h5 class="card-title">Charging Monitor</h5>
                     <p class="card-text">Get alerts when your phone reaches a set charging level with custom audio.</p>
-                    <button class="btn btn-secondary" onclick="window.open('https://trinetra3.netlify.app/Apps/Charging%20Moniter.apk', '_blank')">
+                    <button class="btn" style="background-color: #16A085;" onclick="window.open('https://trinetra3.netlify.app/Apps/Charging%20Moniter.apk', '_blank')">
                         Download Charging Monitor App
                     </button>
                 </div>
@@ -94,11 +137,11 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #34495E;">
                 <div class="card-body text-center">
                     <h5 class="card-title">ChatGPT</h5>
                     <p class="card-text">Use ChatGPT on your mobile device for instant assistance.</p>
-                    <button class="btn btn-dark" onclick="window.open('https://trinetra3.netlify.app/Apps/chatGPT.apk', '_blank')">
+                    <button class="btn" style="background-color: #2C3E50;" onclick="window.open('https://trinetra3.netlify.app/Apps/chatGPT.apk', '_blank')">
                         Download ChatGPT App
                     </button>
                 </div>
@@ -106,16 +149,17 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <div class="card shadow">
+            <div class="card shadow" style="background-color: #4CAF50;">
                 <div class="card-body text-center">
                     <h5 class="card-title">Server App</h5>
                     <p class="card-text">Launch and test HTML websites over Wi-Fi for learning and testing purposes.</p>
-                    <button class="btn btn-success" onclick="window.open('https://trinetra3.netlify.app/Apps/server.apk', '_blank')">
+                    <button class="btn" style="background-color: #FF5722;" onclick="window.open('https://trinetra3.netlify.app/Apps/server.apk', '_blank')">
                         Download Server App
                     </button>
                 </div>
             </div>
         </div>
+
     </div>
 
 </div>
