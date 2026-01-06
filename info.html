@@ -1,22 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collections</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+
     <style>
-        /* Gradient background */
         body {
-            background: linear-gradient(135deg, #f06, #00d2ff);
+            background: linear-gradient(135deg, #CD00F8FF, #40C4FF, #001DF8FF);
             min-height: 100vh;
-            color: #fff; /* Default text color set to white */
+            color: #fff;
         }
 
         h1, h2 {
-            color: #fff; /* Heading colors */
+            color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
@@ -32,20 +32,28 @@
 
         .card-body {
             padding: 1.5rem;
-            color: #fff; /* Card text color set to white */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 180px; /* tune this for your layout */
         }
+
 
         .btn {
             font-weight: bold;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             border-radius: 50px;
-            color: white; /* Button text color */
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            color: white;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
         }
 
         .container {
             padding-top: 50px;
         }
-
     </style>
 </head>
 
@@ -56,225 +64,198 @@
 
     <!-- Apps Section -->
     <h2 class="text-center mb-4">Apps</h2>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="apps-container"></div>
 
-        <!--     YouTube Clone   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #2ECC71;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">YouTube Clone</h5>
-                    <p class="card-text">Watch YouTube videos without ads and download them easily.</p>
-                    <button class="btn" style="background-color: #27AE60;"
-                            onclick="window.open('https://github.com/astrayhawk/Info/raw/main/Apks/Youtube_release.apk', '_blank')">
-                        Download Apk
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Charging Monitor-->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #1ABC9C;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Charging Monitor</h5>
-                    <p class="card-text">Get alerts when your phone reaches a set charging level with custom audio.</p>
-                    <button class="btn" style="background-color: #16A085;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.eagle.chargingmoniter', '_blank')">
-                        Play Store Link
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Barcode Generator   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #E74C3C;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Barcode Generator</h5>
-                    <p class="card-text">Generate and scan the barcodes<br><br></p>
-                    <button class="btn" style="background-color: #C0392B;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.hawks.barcodegenerator', '_blank')">
-                        Play store link
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     VX Player   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #F39C12;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">VX Player</h5>
-                    <p class="card-text">Watch videos from storage and online<br><br></p>
-                    <button class="btn" style="background-color: #FF5722;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.hawks.vx_player', '_blank')">
-                        Play store Link
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Traffic Counter   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #4CAF50;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Traffic Counter</h5>
-                    <p class="card-text">Count, report and survey<br><br></p>
-                    <button class="btn" style="background-color: #C0392B;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.hawks.trafficsurvey', '_blank')">
-                        Play store link
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Server App   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #1ABC9C;">
-
-                <div class="card-body text-center">
-                    <h5 class="card-title">Server App</h5>
-                    <p class="card-text">Launch and test HTML websites over Wi-Fi for learning and testing purposes.</p>
-                    <button class="btn" style="background-color: #16A085;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.eagle.serverapplication', '_blank')">
-                        Play store Link
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Device Info   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #E74C3C;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Device Info</h5>
-                    <p class="card-text">View device, battery, and network info in one simple app.</p>
-                    <button class="btn" style="background-color: #FF5722;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.hawks.deviceinfo', '_blank')">
-                        Play store Link
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Video Factory   -->
-        <!--<div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #4CAF50;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Video Factory</h5>
-                    <p class="card-text">Convert videos, download streams, and more with Video Factory.<br></p>
-                    <button class="btn" style="background-color: #C0392B;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.hawks.videofactory', '_blank')">
-                        Play store link
-                    </button>
-                </div>
-            </div>
-        </div>-->
-
-        <!--     ChatGPT   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #34495E;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">ChatGPT</h5>
-                    <p class="card-text">Use ChatGPT on your mobile device for instant assistance.</p>
-                    <button class="btn" style="background-color: #2C3E50;"
-                            onclick="window.open('https://github.com/astrayhawk/Info/raw/main/Apks/chatGPT.apk', '_blank')">
-                        Download Apk
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     M-Vibe   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #2ECC71;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">M-Vibe</h5>
-                    <p class="card-text">Keep your PC awake or use as a phone massager with customizable vibrations.</p>
-                    <button class="btn" style="background-color: #16A085;"
-                            onclick="window.open('https://github.com/astrayhawk/Info/raw/main/Apks/M_Vibe_release.apk', '_blank')">
-                        Download Apk
-                    </button>
-                    <!--<button class="btn" style="background-color: #16A085;"
-                            onclick="window.open('https://play.google.com/store/apps/details?id=com.hawks.m_vibe', '_blank')">
-                        Play store Apk
-                    </button>-->
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <br><br><br>
-
+    <div class="my-5"></div>
 
     <!-- Websites Section -->
     <h2 class="text-center mb-4">Websites</h2>
-    <div class="row justify-content-center">
-
-        <!--     Trinetra   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #3498DB;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Trinetra</h5>
-                    <p class="card-text">Discover a collection of useful websites for various needs.</p>
-                    <button class="btn" style="background-color: #1ABC9C;"
-                            onclick="window.open('https://trinetra3.netlify.app/', '_blank')">
-                        Explore Trinetra Websites
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Text Encryption Tool   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #34495E;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Text Encryption Tool</h5>
-                    <p class="card-text">A sleek, user-friendly text encryption and decryption tool.</p>
-                    <button class="btn" style="background-color: #2C3E50;"
-                            onclick="window.open('https://trinetra3.netlify.app/Pages/Encrypt.html', '_blank')">
-                        Let's Encrypt
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Moon Finder   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #9B59B6;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Moon Finder</h5>
-                    <p class="card-text">Find the moon’s direction relative to east at any time.</p>
-                    <button class="btn" style="background-color: #8E44AD;"
-                            onclick="window.open('https://webtestkit-hdbr.onrender.com/moon', '_blank')">
-                        Find Moon Direction
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!--     Hello Stranger   -->
-        <div class="col-md-4 mb-3">
-            <div class="card shadow" style="background-color: #4CAF50;">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Hello Stranger</h5>
-                    <p class="card-text">Let's Chat with Friends or Strangers, No Identity, No Personal data
-                        leakage.</p>
-                    <button class="btn" style="background-color: #FF5722;"
-                            onclick="window.open('https://webtestkit-hdbr.onrender.com/chat', '_blank')">
-                        Let's chat
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
+    <div class="row justify-content-center" id="websites-container"></div>
 </div>
 
-</body>
+<script>
+    /* ---------------- APPS LIST ---------------- */
+    const apps = [
+      /*
+      { // App No. undefined
+        name: "Youtube Clone",
+        desc: "Watch YouTube videos without ads and download them easily.",
+        link: "https://github.com/astrayhawk/Info/raw/main/Apks/Youtube_release.apk"
 
+      },
+      { // App No. undefined
+        name: "AnimePehe Clone",
+        desc: "Watch YouTube videos without ads and download them easily.",
+        link: "https://github.com/astrayhawk/Info/raw/main/Apks/AnimePehe_release.apk"
+
+      }, */
+
+      { // App No.1
+        name: "Charging Monitor",
+        desc: "Get alerts when your phone reaches a set charging level with custom audio.",
+        bg: "#1ABC9C",
+        btn: "#16A085",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.eagle.chargingmoniter"
+
+      },
+      { // App No.2
+        name: "Barcode Generator",
+        desc: "Generate and scan the barcodes.",
+        bg: "#E74C3C",
+        btn: "#C0392B",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.barcodegenerator"
+      },
+      { // App No.3
+        name: "Traffic Counter",
+        desc: "Count, report and survey.",
+        bg: "#4CAF50",
+        btn: "#C0392B",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.trafficsurvey"
+      },
+      { // App No.4
+        name: "VX Player",
+        desc: "Watch videos from storage and online.",
+        bg: "#F39C12",
+        btn: "#FF5722",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.vx_player"
+      },
+      { // App No.5
+        name: "Device Info",
+        desc: "View device, battery, and network info in one simple app.",
+        bg: "#E74C3C",
+        btn: "#FF5722",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.deviceinfo"
+      },
+      { // App No.6
+        name: "Server App",
+        desc: "Launch and test HTML websites over Wi-Fi for learning and testing.",
+        bg: "#1ABC9C",
+        btn: "#16A085",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.eagle.serverapplication"
+      },
+      { // App No.7
+        name: "Video Factory",
+        desc: "Convert videos, download streams, and more.",
+        bg: "#4CAF50",
+        btn: "#C0392B",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.videofactory"
+      },
+      { // App No.8
+        name: "Viber",
+        desc: "Keep your PC awake or use as a vibration tool.",
+        bg: "#2ECC71",
+        btn: "#16A085",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.m_vibe"
+      },
+      { // App No.9
+        name: "SF:Source Fetcher",
+        desc: "Learn WebView, view HTML source & inspect HTTP calls.",
+        bg: "#F39C12",
+        btn: "#FF5722",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.sourcefetcher"
+      },
+      { // App No.10
+        name: "GeoSnap",
+        desc: "Capture photos with GPS location & timestamp.",
+        bg: "#F39C12",
+        btn: "#FF5722",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.gps_camera"
+      },
+      { // App No.11
+        name: "Black Cat (Under testing)",
+        desc: "Lock photos, videos & files in PIN-protected folders.",
+        bg: "#1ABC9C",
+        btn: "#16A085",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.blackcat"
+      },
+      { // App No.12
+        name: "Bhagavad Gita (Under testing)",
+        desc: "Read, Listen & Learn the Bhagavad Gita.",
+        bg: "#4CAF50",
+        btn: "#C0392B",
+        btn_txt: "PlayStore link",
+        link: "https://play.google.com/store/apps/details?id=com.hawks.mythicalbooks"
+      },
+      { // App No. undefined
+        name: "ChatGPT",
+        desc: "Use ChatGPT on your mobile device.",
+        bg: "#34495E",
+        btn: "#2C3E50",
+        btn_txt: "Github link",
+        link: "https://github.com/astrayhawk/Info/raw/main/Apks/chatGPT.apk"
+      }
+    ];
+
+    /* ---------------- WEBSITES LIST ---------------- */
+    const websites = [
+      {
+        name: "Trinetra",
+        desc: "Discover a collection of useful websites.",
+        bg: "#3498DB",
+        btn: "#1ABC9C",
+        btn_txt: "open",
+        link: "https://trinetra3.netlify.app/"
+      },
+      {
+        name: "Text Encryption Tool",
+        desc: "A modern encryption / decryption tool.",
+        bg: "#34495E",
+        btn: "#2C3E50",
+        btn_txt: "open",
+        link: "https://trinetra3.netlify.app/Pages/Encrypt.html"
+      },
+      {
+        name: "Moon Finder",
+        desc: "Find the moon’s direction from your location.",
+        bg: "#9B59B6",
+        btn: "#8E44AD",
+        btn_txt: "open",
+        link: "https://webtestkit-hdbr.onrender.com/moon"
+      },
+      {
+        name: "Hello Stranger",
+        desc: "Anonymous chat with zero data storage.",
+        bg: "#4CAF50",
+        btn: "#FF5722",
+        btn_txt: "open",
+        link: "https://webtestkit-hdbr.onrender.com/chat"
+      }
+    ];
+
+    /* ---------------- RENDER FUNCTION ---------------- */
+    function renderCards(list, containerId) {
+      let container = document.getElementById(containerId);
+      list.forEach(item => {
+        container.innerHTML += `
+          <div class="col-md-4 mb-3">
+            <div class="card shadow" style="background-color:${item.bg}">
+              <div class="card-body text-center">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">${item.desc}</p>
+                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn" style="background-color:${item.btn}">
+                  ${item.btn_txt}
+                </a>
+              </div>
+            </div>
+          </div>`;
+      });
+    }
+
+    /* ---------------- RUN ---------------- */
+    renderCards(apps, "apps-container");
+    renderCards(websites, "websites-container");
+</script>
+
+</body>
 </html>
