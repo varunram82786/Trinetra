@@ -1,346 +1,256 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trintra</title>
+    <title>Eagle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body{
-
-            background-color: black;
-        }
-        .MyButton{
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: 600;
-            color: black;
-            background-color: red;
-            /*                border: none;*/
-            border: 0px solid red ;
-            cursor: pointer;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-        .MyTitle {
-            display: inline-block;
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #1e293b, #0f172a);
             color: #fff;
-            /*background-color: #03A9F4;*/
-            /*border: 2px solid #03A9F4 ;  Add a red border with 2px width */
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 96%;
+            padding: 40px;
         }
 
-        /*            .MyTitle{
-                        display: inline-block;
-                        padding: 12px 20px;
-                        font-size: 16px;
-                        font-weight: 600;
-                        color: #fff;
-                                        background-color: #4CAF50;
+        .header{
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
 
-                                        background-color: #0A0801;
-                        background-color: #03A9F4;
-                        border: none;
-                        border-radius: 15px;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-                        width : 96%;
-                    }*/
+        .section{
+            margin-bottom: 70px;
+        }
+
+        .section-title{
+            font-size: 18px;
+            font-weight: 600;
+            color: #9ca3af;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover{
+            background: #ef4444;
+            border-color: #ef4444;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+        }
+
+        .card img{
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .card span{
+            font-size: 15px;
+            font-weight: 500;
+            color: #e5e7eb;
+        }
+
     </style>
 </head>
+
 <body>
+
+<!--<div class="header">Eagle</div>-->
+<div id="content"></div>
+
 <script>
-    window.addEventListener('resize', resizeIframe);
-    window.addEventListener('load', resizeIframe);
-    function resizeIframe() {
-        var test_p = document.getElementsByClassName("test_p");
-        var button = document.getElementsByClassName('MyButton');
-        var button_width = ((window.innerWidth) / 5.5);
 
-        for (var i = 0; i < button.length; i++) {
-            button[i].style.width = button_width + "px";
-        }
-        var span_width1 = document.getElementsByClassName('101');
-        var remaining_span_width1 = (window.innerWidth - (button_width * 5)) / 6;
+    const categories = {
+      "Varun": [
+       { title: "MyPasswords", url: "https://docs.google.com/spreadsheets/d/1N5CZcvIurwHYiasQrkrudbQyVfMZsbqUVYtBIGHf2r8/edit#gid=0" },
+       { title: "Official", url: "https://drive.google.com/drive/u/1/folders/1wLBlU_xBLuSVQ4lV4rbqlAujjpvAk0Ys" },
+       { title: "Classes", url: "https://drive.google.com/drive/u/1/folders/1ClXIkQI1cEEl5qpZX70ItCae7tdGtjZw" },
+       { title: "Netlify", url: "https://app.netlify.com/login" },
+       { title: "Google meet", url: "https://meet.google.com/wof-nsha-ypd" }
+      ],
 
-        for (var i = 0; i < span_width1.length; i++) {
-            span_width1[i].style.width = remaining_span_width1 + "px";
+      "Google": [
+       { title: "Gmail", url: "https://mail.google.com/mail/u/0/#inbox" },
+       { title: "Drive", url: "https://drive.google.com/drive/u/0/home" },
+       { title: "Photos", url: "https://photos.google.com/" },
+       { title: "Keep", url: "https://keep.google.com/u/0/#home" },
+       { title: "Passwords", url: "https://passwords.google.com/" },
+       { title: "Translater", url: "https://translate.google.com/" },
+       { title: "ChatGPT", url: "https://chat.openai.com/" },
+       { title: "Bard", url: "https://bard.google.com/u/3/chat" },
+       { title: "App Script", url: "https://script.google.com/" },
+       { title: "test", url: "../FireWall/varun.html" },
+       { title: "AWS Console", url: "https://aws.amazon.com/console/" },
+       { title: "Firebase Console", url: "https://console.firebase.google.com/" },
+       { title: "Youtube Downloader", url: "https://yt1d.com/en/" }
+      ],
 
-        }
+      "Classes": [
+       { title: "Android Java", url: "https://docs.google.com/document/d/19gNlBBk4-rhNL4EDeBehNCAAUPI83clA/edit" },
+       { title: "Office", url: "https://docs.google.com/document/d/1U_0IuanQRLDVCN0HdCo6Qes5KIGjoWZaIn-VflSiEVQ/edit#heading=h.un3s3yozj6hw" },
+       { title: "Java", url: "https://docs.google.com/document/d/1mvt9bNR0lLspNMz9kibDOe54Hu51N8Ky/edit" },
+       { title: "ADB", url: "https://docs.google.com/document/d/1uoovyuUxhRdy3ByF2TmR0VpGpckXvETxliYxMwxcB6g/edit?usp=sharing" },
+       { title: "MoI", url: "https://docs.google.com/document/d/1AtRfkyNRN9EN2z-Y6b3pet-XIBc_lOZvST0TBrQBIVk/edit" },
+       { title: "SpringBoot", url: "https://docs.google.com/document/d/12ZyNrTZYRxOGML1ncaj3gHi-ep9BQMMs7TV_YGula9k/edit#heading=h.oe9meimxx6wc" },
+       { title: "SQL", url: "https://docs.google.com/document/d/1dWTdyoNvkBV8ZMzEkhw1iu8HKGD25xlUWTpeyooW8w0/edit" },
+       { title: "Android Shortcut Keys", url: "https://docs.google.com/document/d/1_YMSHOe6kpHAXH7RhLTmVrHACcUnDA7583EvRfh8zFo/edit" },
+       { title: "GIT", url: "https://docs.google.com/document/d/1th9SjI_c5opWeV-35i1nibVd681dwHZvDbtj3-MdL9U/edit" },
+       { title: "Html", url: "https://docs.google.com/document/d/1ZoRwFsqvk1F23NUp03TKonEDJyUsiGvDX3Y_mdIwJJk/edit" },
+       { title: "Kotlin", url: "https://docs.google.com/document/d/1ULvtIXHhpbUZapNnJF1ffBee1HpxmKIvuZXrlsxWA8w/edit" },
+       { title: "Android Kotlin", url: "https://docs.google.com/document/d/1ejhf-FCMgFPYmuIOT3vWBcWJtEoJ8ri4PhD3uTtoQv0/edit" },
+       { title: "Embedded Android", url: "https://docs.google.com/document/d/1D0Cmk9_xdDRgXGdHyw0fLulCMOjm7anCgKuueZK6_q8/edit" },
+       { title: "AWS", url: "https://docs.google.com/document/d/1NHjzsLsWa8Y-VVIV3PvfUSUtsmiaR0kd94DFgHa9PNQ/edit" },
+       { title: "FFMPEG", url: "https://docs.google.com/document/d/1j96ipjGRoVnTF5IRdvMK9VnybOLqTHlS1GyLAHxwu7s/edit" },
+       { title: "RaspberryPi", url: "https://docs.google.com/document/d/1M_d8UMx68p7szNmA6nzR4FOzJ7DMKuCtHjlBTTTxyZ8/edit" },
+       { title: "Linux", url: "https://docs.google.com/document/d/18Cq_M1i07au5Ua_yXc2jYHDqr4Fs2vw7Xf9quRVJhWo/edit" }
+      ],
 
-    }
+      "Anime": [
+       { title: "Count", url: "https://docs.google.com/spreadsheets/d/1WfjDwUrrmZDMviuSDXt568U5GJez1SVyMig_ec9D3NE/edit?usp=drive_link" },
+       { title: "GoGo Anime org", url: "https://ww6.gogoanime2.org/" },
+       { title: "GoGo Anime fi", url: "https://ww19.gogoanimes.fi/" },
+       { title: "Hi Anime", url: "https://hianime.to/" },
+       { title: "Animension", url: "https://www.animension.to/" },
+       { title: "Anime Pahe", url: "https://animepahe.ru/" }
+      ],
+
+      "EPFO": [
+       { title: "EPFO Website", url: "https://unifiedportal-mem.epfindia.gov.in/memberinterface/" },
+       { title: "EPFO Passbook", url: "https://passbook.epfindia.gov.in/MemberPassBook/login" }
+      ],
+
+      "Excel": [
+       { title: "Money Manager", url: "https://docs.google.com/spreadsheets/d/12gH0uBh6mU1dU-1j4c2CU6hQhjqDQSm4swFSseQiWAo/edit?gid=0#gid=0" },
+       { title: "WeightBridge", url: "https://docs.google.com/spreadsheets/d/1qNr_fiFVvsFFeTQw8BMOnpahJTZmoKQuijqdT_n-Cl4/edit" },
+       { title: "Links", url: "https://docs.google.com/spreadsheets/d/1EqruZG_2aIgeFW3D3Wo8ip_ZUZCVqTmTSJ2KljLhRGg/edit#gid=0" }
+      ],
+
+      "Other": [
+       { title: "GitHub", url: "https://github.com/" },
+       { title: "Free Formatter", url: "https://www.freeformatter.com/json-formatter.html#before-output" }
+      ],
+
+      "Icons": [
+       { title: "Icon8", url: "https://icons8.com/" },
+       { title: "Google Icons", url: "https://fonts.google.com/icons" },
+       { title: "Google design Icons", url: "https://pictogrammers.com/library/mdi/" },
+       { title: "PngToSvg Converter", url: "https://image.online-convert.com/convert/png-to-svg" },
+       { title: "SVG downloader", url: "https://iconscout.com/icons/svg" }
+      ],
+
+      "Ui/Ux AI": [
+       { title: "Google Stitch", url: "https://stitch.withgoogle.com/" },
+       { title: "Google Ai Studio", url: "https://aistudio.google.com/apps" },
+       { title: "Uizard", url: "https://app.uizard.io/" },
+       { title: "Lovable.dev", url: "https://lovable.dev" },
+       { title: "Figma", url: "https://www.figma.com/" }
+      ],
+
+      "Utilities": [
+       { title: "temp mail", url: "https://temp-mail.io/en" },
+       { title: "Morphic", url: "https://morphic.com/" }
+      ],
+
+      "Hosted Frontend Websites": [
+       { title: "Eagle netlify", url: "https://trinetra3.netlify.app/home/eagle.html" },
+       { title: "Trinetra netlify", url: "https://trinetra3.netlify.app" },
+       { title: "Varun-research netlify", url: "https://varun-research.netlify.app" },
+       { title: "Varun179 netlify", url: "https://varun179.netlify.app" },
+       { title: "Traffic netlify", url: "https://traffic2022.netlify.app" },
+       { title: "Eagle Github", url: "https://varunram82786.github.io/Trinetra/Home/Eagle.html" },
+       { title: "Info Website GitHub", url: "https://varunram82786.github.io/Trinetra/info.html" }
+      ],
+
+      "Hosted SpringBoot Websites": [
+       { title: "WebTestKit AWS", url: "../redirectTo/amazon.html" },
+       { title: "WebTestKit render", url: "../redirectTo/render.html" },
+       { title: "YouTube downloader", url: "https://webtestkit-hdbr.onrender.com/youtube" },
+       { title: "Anime Downloader", url: "https://webtestkit-hdbr.onrender.com/anime" }
+      ]
+
+      };
+
+  function getFavicon(url) {
+      try {
+          const domain = new URL(url).hostname;
+          return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+      } catch {
+          return "";
+      }
+  }
+
+  const content = document.getElementById("content");
+
+  for (let category in categories) {
+
+      const section = document.createElement("div");
+      section.className = "section";
+
+      const title = document.createElement("div");
+      title.className = "section-title";
+      title.textContent = category;
+
+      const grid = document.createElement("div");
+      grid.className = "grid";
+
+      categories[category].forEach(item => {
+
+          const card = document.createElement("div");
+          card.className = "card";
+
+          const icon = document.createElement("img");
+          icon.src = getFavicon(item.url);
+          icon.onerror = function() {
+              this.style.display = "none";
+          };
+
+          const text = document.createElement("span");
+          text.textContent = item.title;
+
+          card.appendChild(icon);
+          card.appendChild(text);
+
+          card.onclick = () => {
+              if(item.url && item.url !== "#"){
+                  window.open(item.url, "_blank");
+              }
+          };
+
+          grid.appendChild(card);
+      });
+
+      section.appendChild(title);
+      section.appendChild(grid);
+      content.appendChild(section);
+  }
+
 </script>
-<form style="background-color: black">
 
-
-    <div style=" width :100hv; " class="MyTitle">Varun
-        <br><br>
-        <input type='button' class='MyButton' value='MyPasswords'
-               onclick="window.open('https://docs.google.com/spreadsheets/d/1N5CZcvIurwHYiasQrkrudbQyVfMZsbqUVYtBIGHf2r8/edit#gid=0', '_blank')">
-        <input type='button' class='MyButton' value='Official'
-               onclick="window.open('https://drive.google.com/drive/u/1/folders/1wLBlU_xBLuSVQ4lV4rbqlAujjpvAk0Ys', '_blank')">
-        <input type='button' class='MyButton' value='Classes'
-               onclick="window.open('https://drive.google.com/drive/u/1/folders/1ClXIkQI1cEEl5qpZX70ItCae7tdGtjZw', '_blank')">
-        <input type='button' class='MyButton' value='Netlify'
-               onclick="window.open('https://app.netlify.com/login', '_blank')">
-        <input type='button' class='MyButton' value='Google meet'
-               onclick="window.open('https://meet.google.com/wof-nsha-ypd', '_blank')">
-        <br> <br>
-    </div>
-    <br><br>
-
-
-    <div style=" width :100hv; " class="MyTitle">Google
-        <br><br>
-        <input type='button' class='MyButton' value='Gmail'
-               onclick="window.open('https://mail.google.com/mail/u/0/#inbox', '_blank')">
-        <input type='button' class='MyButton' value='Drive'
-               onclick="window.open('https://drive.google.com/drive/u/0/home', '_blank')">
-        <input type='button' class='MyButton' value='Photos'
-               onclick="window.open('https://photos.google.com/', '_blank')">
-        <input type='button' class='MyButton' value='Keep'
-               onclick="window.open('https://keep.google.com/u/0/#home', '_blank')">
-        <input type='button' class='MyButton' value='Passwords'
-               onclick="window.open('https://passwords.google.com/', '_blank')">
-
-        <br> <br>
-        <br><br>
-        <input type='button' class='MyButton' value='Translater'
-               onclick="window.open('https://translate.google.com/', '_blank')">
-        <input type='button' class='MyButton' value='ChatGPT'
-               onclick="window.open('https://chat.openai.com/', '_blank')">
-        <input type='button' class='MyButton' value='Bard'
-               onclick="window.open('https://bard.google.com/u/3/chat', '_blank')">
-        <input type='button' class='MyButton' value='App Script'
-               onclick="window.open('https://script.google.com/', '_blank')">
-        <!--                       onclick="window.open('../FireWall/varun.html?names='+ encodeURIComponent(JSON.stringify(names)), '_blank')">-->
-        <input type='button' class='MyButton' value='test'
-               onclick="window.open('../FireWall/varun.html', '_blank')">
-
-        <br> <br> <br>
-        <input type='button' class='MyButton' value='AWS Console'
-               onclick="window.open('https://aws.amazon.com/console/', '_blank')">
-        <input type='button' class='MyButton' value='Firebase Console'
-               onclick="window.open('https://console.firebase.google.com/', '_blank')">
-        <input type='button' class='MyButton' value='Youtube Downloader'
-               onclick="window.open('https://yt1d.com/en/', '_blank')">
-
-
-    </div>
-    <br><br>
-    <div style=" width :100hv; " class="MyTitle">
-        <a href="https://drive.google.com/drive/u/0/folders/19VGf8zQV2imBN8iDpl2VlKmvFMLWHFtI" target="_blank"
-           style="color:yellow;text-decoration:none;">Classes</a>
-        <br><br>
-        <input type='button' class='MyButton' value='Android Java'
-               onclick="window.open('https://docs.google.com/document/d/19gNlBBk4-rhNL4EDeBehNCAAUPI83clA/edit', '_blank')">
-        <input type='button' class='MyButton' value='Office'
-               onclick="window.open('https://docs.google.com/document/d/1U_0IuanQRLDVCN0HdCo6Qes5KIGjoWZaIn-VflSiEVQ/edit#heading=h.un3s3yozj6hw', '_blank')">
-        <input type='button' class='MyButton' value='Java'
-               onclick="window.open('https://docs.google.com/document/d/1mvt9bNR0lLspNMz9kibDOe54Hu51N8Ky/edit', '_blank')">
-        <input type='button' class='MyButton' value='ADB'
-               onclick="window.open('https://docs.google.com/document/d/1uoovyuUxhRdy3ByF2TmR0VpGpckXvETxliYxMwxcB6g/edit?usp=sharing', '_blank')">
-        <input type='button' class='MyButton' value='MoI'
-               onclick="window.open('https://docs.google.com/document/d/1AtRfkyNRN9EN2z-Y6b3pet-XIBc_lOZvST0TBrQBIVk/edit', '_blank')">
-
-        <br> <br> <br>
-        <input type='button' class='MyButton' value='SpringBoot'
-               onclick="window.open('https://docs.google.com/document/d/12ZyNrTZYRxOGML1ncaj3gHi-ep9BQMMs7TV_YGula9k/edit#heading=h.oe9meimxx6wc', '_blank')">
-        <input type='button' class='MyButton' value='SQL'
-               onclick="window.open('https://docs.google.com/document/d/1dWTdyoNvkBV8ZMzEkhw1iu8HKGD25xlUWTpeyooW8w0/edit', '_blank')">
-        <input type='button' class='MyButton' value='Android Shortcut Keys'
-               onclick="window.open('https://docs.google.com/document/d/1_YMSHOe6kpHAXH7RhLTmVrHACcUnDA7583EvRfh8zFo/edit', '_blank')">
-        <input type='button' class='MyButton' value='GIT'
-               onclick="window.open('https://docs.google.com/document/d/1th9SjI_c5opWeV-35i1nibVd681dwHZvDbtj3-MdL9U/edit', '_blank')">
-        <input type='button' class='MyButton' value='Html'
-               onclick="window.open('https://docs.google.com/document/d/1ZoRwFsqvk1F23NUp03TKonEDJyUsiGvDX3Y_mdIwJJk/edit', '_blank')">
-        <br> <br> <br>
-        <input type='button' class='MyButton' value='Kotlin'
-               onclick="window.open('https://docs.google.com/document/d/1ULvtIXHhpbUZapNnJF1ffBee1HpxmKIvuZXrlsxWA8w/edit', '_blank')">
-        <input type='button' class='MyButton' value='Android Kotlin'
-               onclick="window.open('https://docs.google.com/document/d/1ejhf-FCMgFPYmuIOT3vWBcWJtEoJ8ri4PhD3uTtoQv0/edit', '_blank')">
-        <input type='button' class='MyButton' value='Embedded Android'
-               onclick="window.open('https://docs.google.com/document/d/1D0Cmk9_xdDRgXGdHyw0fLulCMOjm7anCgKuueZK6_q8/edit', '_blank')">
-
-        <br> <br> <br>
-        <input type='button' class='MyButton' value='AWS'
-               onclick="window.open('https://docs.google.com/document/d/1NHjzsLsWa8Y-VVIV3PvfUSUtsmiaR0kd94DFgHa9PNQ/edit', '_blank')">
-        <input type='button' class='MyButton' value='FFMPEG'
-               onclick="window.open('https://docs.google.com/document/d/1j96ipjGRoVnTF5IRdvMK9VnybOLqTHlS1GyLAHxwu7s/edit', '_blank')">
-        <input type='button' class='MyButton' value='RaspberryPi'
-               onclick="window.open('https://docs.google.com/document/d/1M_d8UMx68p7szNmA6nzR4FOzJ7DMKuCtHjlBTTTxyZ8/edit', '_blank')">
-        <input type='button' class='MyButton' value='Linux'
-               onclick="window.open('https://docs.google.com/document/d/18Cq_M1i07au5Ua_yXc2jYHDqr4Fs2vw7Xf9quRVJhWo/edit', '_blank')">
-
-        <br> <br> <br>
-    </div>
-
-
-    <br><br>
-    <div style=" width :100hv; " class="MyTitle">Anime
-        <br><br>
-        <input type='button' class='MyButton' value='Count'
-               onclick="window.open('https://docs.google.com/spreadsheets/d/1WfjDwUrrmZDMviuSDXt568U5GJez1SVyMig_ec9D3NE/edit?usp=drive_link', '_blank')">
-        <br> <br> <br>
-
-        <input type='button' class='MyButton' value='GoGo Anime org'
-               onclick="window.open('https://ww6.gogoanime2.org/', '_blank')">
-        <input type='button' class='MyButton' value='GoGo Anime fi'
-               onclick="window.open('https://ww19.gogoanimes.fi/', '_blank')">
-        <input type='button' class='MyButton' value='Hi Anime'
-               onclick="window.open('https://hianime.to/', '_blank')">
-        <input type='button' class='MyButton' value='Animension'
-               onclick="window.open('https://www.animension.to/', '_blank')">
-        <input type='button' class='MyButton' value='Anime Pahe'
-               onclick="window.open('https://animepahe.ru/', '_blank')">
-
-        <br> <br>
-    </div>
-
-
-    <br><br>
-    <div style=" width :100hv; " class="MyTitle">EPFO
-        <br><br>
-        <input type='button' class='MyButton' value='EPFO Website'
-               onclick="window.open('https://unifiedportal-mem.epfindia.gov.in/memberinterface/', '_blank')">
-        <input type='button' class='MyButton' value='EPFO Passbook'
-               onclick="window.open('https://passbook.epfindia.gov.in/MemberPassBook/login', '_blank')">
-        <br> <br>
-    </div>
-
-    <br><br>
-    <div style=" width :100hv; " class="MyTitle">
-        <a href="https://drive.google.com/drive/u/0/folders/1Mc8pQkXtJoYXUqItib9ehpVJQwVljxvx" target="_blank"
-           style="color:yellow;text-decoration:none;">Excel</a>
-        <br><br>
-        <input type='button' class='MyButton' value='Money Manager'
-               onclick="window.open('https://docs.google.com/spreadsheets/d/12gH0uBh6mU1dU-1j4c2CU6hQhjqDQSm4swFSseQiWAo/edit?gid=0#gid=0', '_blank')">
-
-        <input type='button' class='MyButton' value='WeightBridge'
-               onclick="window.open('https://docs.google.com/spreadsheets/d/1qNr_fiFVvsFFeTQw8BMOnpahJTZmoKQuijqdT_n-Cl4/edit', '_blank')">
-
-        <input type='button' class='MyButton' value='Links'
-               onclick="window.open('https://docs.google.com/spreadsheets/d/1EqruZG_2aIgeFW3D3Wo8ip_ZUZCVqTmTSJ2KljLhRGg/edit#gid=0', '_blank')">
-        <br> <br>
-    </div>
-
-    <br><br>
-    <div style=" width :100hv; " class="MyTitle">Other
-        <br><br>
-        <input type='button' class='MyButton' value='GitHub'
-               onclick="window.open('https://github.com/', '_blank')">
-        <input type='button' class='MyButton' value='Free Formatter'
-               onclick="window.open('https://www.freeformatter.com/json-formatter.html#before-output', '_blank')">
-    </div>
-    <br> <br>
-
-
-    <div style=" width :100hv; " class="MyTitle">Icons
-        <br><br>
-        <input type='button' class='MyButton' value='Icon8'
-               onclick="window.open('https://icons8.com/', '_blank')">
-        <input type='button' class='MyButton' value='Google Icons'
-               onclick="window.open('https://fonts.google.com/icons', '_blank')">
-        <input type='button' class='MyButton' value='Google design Icons'
-               onclick="window.open('https://pictogrammers.com/library/mdi/', '_blank')">
-        <input type='button' class='MyButton' value='PngToSvg Converter'
-               onclick="window.open('https://image.online-convert.com/convert/png-to-svg', '_blank')">
-        <input type='button' class='MyButton' value='SVG downloader'
-               onclick="window.open('https://iconscout.com/icons/svg?gad_source=1&gclid=CjwKCAjw26KxBhBDEiwAu6KXty_alMsPqC5oyAHru9kIsESbUzKcbVMeaS05uO1hUL13nS4RZmZNgxoC38wQAvD_BwE', '_blank')">
-    </div>
-    <br> <br>
-
-    <div style=" width :100hv; " class="MyTitle">Ui/Ux AI
-        <br><br>
-        <input type='button' class='MyButton' value='Google Stitch'
-               onclick="window.open('https://stitch.withgoogle.com/', '_blank')">
-        <input type='button' class='MyButton' value='Google Ai Studio'
-               onclick="window.open('https://aistudio.google.com/apps', '_blank')">
-        <input type='button' class='MyButton' value='Uizard'
-               onclick="window.open('https://app.uizard.io/', '_blank')">
-        <input type='button' class='MyButton' value='Lovable.dev'
-               onclick="window.open('https://lovable.dev', '_blank')">
-        <input type='button' class='MyButton' value='Figma'
-               onclick="window.open('https://www.figma.com/', '_blank')">
-    </div>
-    <br> <br>
-
-    <div style=" width :100hv; " class="MyTitle">
-        <input type='button' class='MyButton' value='temp mail'
-               onclick="window.open('https://temp-mail.io/en', '_blank')">
-        <input type='button' class='MyButton' value='Morphic'
-               onclick="window.open('https://morphic.com/', '_blank')">
-
-    </div>
-    <br> <br>
-
-    <div style=" width :100hv; " class="MyTitle">Hosted Frontend Websites
-        <br><br>
-        <input type='button' class='MyButton' value='Eagle netlify'
-               onclick="window.open('https://trinetra3.netlify.app/home/eagle.html', '_blank')">
-
-        <input type='button' class='MyButton' value='Trinetra netlify'
-               onclick="window.open('https://trinetra3.netlify.app', '_blank')">
-
-        <input type='button' class='MyButton' value='Varun-research netlify'
-               onclick="window.open('https://varun-research.netlify.app', '_blank')">
-
-        <input type='button' class='MyButton' value='Varun179 netlify'
-               onclick="window.open('https://varun179.netlify.app', '_blank')">
-
-        <input type='button' class='MyButton' value='Traffic netlify'
-               onclick="window.open('https://traffic2022.netlify.app', '_blank')">
-
-        <br><br>
-        <input type='button' class='MyButton' value='Eagle Github'
-               onclick="window.open('https://varunram82786.github.io/Trinetra/Home/Eagle.html', '_blank')">
-
-        <input type='button' class='MyButton' value='Info Website GitHub'
-               onclick="window.open('https://varunram82786.github.io/Trinetra/info.html', '_blank')">
-
-        <br><br>
-    </div>
-
-
-    <div style=" width :100hv; " class="MyTitle">Hosted SpringBoot Websites
-        <br><br>
-        <input type='button' class='MyButton' value='WebTestKit AWS'
-               onclick="window.open('../redirectTo/amazon.html', '_blank')">
-
-        <input type='button' class='MyButton' value='WebTestKit render'
-               onclick="window.open('../redirectTo/render.html', '_blank')">
-
-        <input type='button' class='MyButton' value='YouTube downloader'
-               onclick="window.open('https://webtestkit-hdbr.onrender.com/youtube', '_blank')">
-
-        <input type='button' class='MyButton' value='Anime Downloader'
-               onclick="window.open('https://webtestkit-hdbr.onrender.com/anime', '_blank')">
-    </div>
-
-    <br> <br> <br> <br>
-</form>
 </body>
 </html>
-
-
-<!--<div style=" width :100hv; "class="MyTitle">Docs
-                <br><br>
-                <input type='button'  class='MyButton'    value=''
-                       onclick="window.open('', '_blank')">
-                <input type='button'  class='MyButton'   value=''
-                       onclick="window.open('', '_blank')">
-                <input type='button'  class='MyButton'   value=''
-                       onclick="window.open('', '_blank')">
-                <input type='button'  class='MyButton'   value='ADB'
-                       onclick="window.open('', '_blank')">
-                <input type='button'  class='MyButton'   value='MoI'
-                       onclick="window.open('', '_blank')">
-
-                <br>   <br>   <br>
-
-            </div>-->
