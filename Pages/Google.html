@@ -1,42 +1,163 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Google</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-.MyButton{  display: inline-block;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;  width : 19.5%
-</style>
+    <title>Eagle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #1e293b, #0f172a);
+            color: #fff;
+            padding: 40px;
+        }
+
+        .header{
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+
+        .section{
+            margin-bottom: 70px;
+        }
+
+        .section-title{
+            font-size: 18px;
+            font-weight: 600;
+            color: #9ca3af;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover{
+            background: #ef4444;
+            border-color: #ef4444;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+        }
+
+        .card img{
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .card span{
+            font-size: 15px;
+            font-weight: 500;
+            color: #e5e7eb;
+        }
+
+    </style>
 </head>
+
 <body>
-<form>
-<br>
-<input type='button'  class='MyButton'   id='Button0' value='gmail'  onclick="window.open('https://mail.google.com/mail/u/0/#inbox','_blank')">
-<input type='button'  class='MyButton'   id='Button1' value='drive'  onclick="window.open('https://drive.google.com/drive/my-drive','_blank')">
-<input type='button'  class='MyButton'   id='Button2' value='photos'  onclick="window.open('https://photos.google.com/?tab=oq&amp;pageId=none','_blank')">
-<input type='button'  class='MyButton'   id='Button3' value='Keep'  onclick="window.open('https://keep.google.com/u/0/','_blank')">
-<input type='button'  class='MyButton'   id='Button4' value='Docs'  onclick="window.open('https://docs.google.com/document/','_blank')">
-<br>
-<br>
-<br>
-<input type='button'  class='MyButton'   id='Button5' value='Passwords'  onclick="window.open('https://passwords.google.com/?ep=1&amp;hl=en&amp;rapt=AEjHL4MDs3XM9M9Oj9eHxuRoY3UeczaOXM9dc5bCeXFfzvruKK--bJspesSqbEdsr6w_WoV1-mTn4pNXDzLDChodJ5P6mVVwaA&amp;standalone=false','_blank')">
-<input type='button'  class='MyButton'   id='Button6' value='Google Translator'  onclick="window.open('https://translate.google.co.in/','_blank')">
-<input type='button'  class='MyButton'   id='Button7' value='Activity'  onclick="window.open('https://myaccount.google.com/u/0/device-activity?pli=1','_blank')">
-<input type='button'  class='MyButton'   id='Button8' value='contacts'  onclick="window.open('https://contacts.google.com/?hl=en&amp;tab=mC','_blank')">
-<input type='button'  class='MyButton'   id='Button9' value='groups'  onclick="window.open('https://groups.google.com/forum/?hl=en#!overview','_blank')">
-<br>
-<br>
-<br>
-<input type='button'  class='MyButton'   id='Button10' value='News'  onclick="window.open('https://news.google.com/','_blank')">
-</form>
+
+<!--<div class="header">Eagle</div>-->
+<div id="content"></div>
+
+<script>
+    const categories = {
+          "Google": [
+            { title: "Gmail", url: "https://mail.google.com/mail/u/0/#inbox" },
+            { title: "Drive", url: "https://drive.google.com/drive/my-drive" },
+            { title: "Photos", url: "https://photos.google.com/" },
+            { title: "Keep", url: "https://keep.google.com/u/0/" },
+            { title: "Docs", url: "https://docs.google.com/document/" },
+            { title: "Passwords", url: "https://passwords.google.com/" },
+            { title: "Google Translator", url: "https://translate.google.co.in/" },
+            { title: "Activity", url: "https://myaccount.google.com/u/0/device-activity" },
+            { title: "Contacts", url: "https://contacts.google.com/" },
+            { title: "Groups", url: "https://groups.google.com/" },
+            { title: "News", url: "https://news.google.com/" }
+          ]
+        };
+
+
+
+      function getFavicon(url) {
+          try {
+              const domain = new URL(url).hostname;
+              return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+          } catch {
+              return "";
+          }
+      }
+
+      const content = document.getElementById("content");
+
+      for (let category in categories) {
+
+          const section = document.createElement("div");
+          section.className = "section";
+
+          const title = document.createElement("div");
+          title.className = "section-title";
+          title.textContent = category;
+
+          const grid = document.createElement("div");
+          grid.className = "grid";
+
+          categories[category].forEach(item => {
+
+              const card = document.createElement("div");
+              card.className = "card";
+
+              const icon = document.createElement("img");
+              icon.src = getFavicon(item.url);
+              icon.onerror = function() {
+                  this.style.display = "none";
+              };
+
+              const text = document.createElement("span");
+              text.textContent = item.title;
+
+              card.appendChild(icon);
+              card.appendChild(text);
+
+              card.onclick = () => {
+                  if(item.url && item.url !== "#"){
+                      window.open(item.url, "_blank");
+                  }
+              };
+
+              grid.appendChild(card);
+          });
+
+          section.appendChild(title);
+          section.appendChild(grid);
+          content.appendChild(section);
+      }
+
+</script>
+
 </body>
 </html>
