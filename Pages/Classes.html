@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eagle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #1e293b, #0f172a);
+            color: #fff;
+            padding: 40px;
+        }
+
+        .header{
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+
+        .section{
+            margin-bottom: 70px;
+        }
+
+        .section-title{
+            font-size: 18px;
+            font-weight: 600;
+            color: #9ca3af;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover{
+            background: #ef4444;
+            border-color: #ef4444;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+        }
+
+        .card img{
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .card span{
+            font-size: 15px;
+            font-weight: 500;
+            color: #e5e7eb;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!--<div class="header">Eagle</div>-->
+<div id="content"></div>
+
+<script>
+
+    const categories = {
+      "Classes": [
+       { title: "Classes", url: "https://drive.google.com/drive/folders/19VGf8zQV2imBN8iDpl2VlKmvFMLWHFtI" },
+       { title: "Android Java", url: "https://docs.google.com/document/d/19gNlBBk4-rhNL4EDeBehNCAAUPI83clA/edit" },
+       { title: "Office", url: "https://docs.google.com/document/d/1U_0IuanQRLDVCN0HdCo6Qes5KIGjoWZaIn-VflSiEVQ/edit#heading=h.un3s3yozj6hw" },
+       { title: "Java", url: "https://docs.google.com/document/d/1mvt9bNR0lLspNMz9kibDOe54Hu51N8Ky/edit" },
+       { title: "ADB", url: "https://docs.google.com/document/d/1uoovyuUxhRdy3ByF2TmR0VpGpckXvETxliYxMwxcB6g/edit?usp=sharing" },
+       { title: "MoI", url: "https://docs.google.com/document/d/1AtRfkyNRN9EN2z-Y6b3pet-XIBc_lOZvST0TBrQBIVk/edit" },
+       { title: "SpringBoot", url: "https://docs.google.com/document/d/12ZyNrTZYRxOGML1ncaj3gHi-ep9BQMMs7TV_YGula9k/edit#heading=h.oe9meimxx6wc" },
+       { title: "SQL", url: "https://docs.google.com/document/d/1dWTdyoNvkBV8ZMzEkhw1iu8HKGD25xlUWTpeyooW8w0/edit" },
+       { title: "App Script", url: "https://docs.google.com/document/d/1hrK1fXMAGe85b_QqycpR6Jg0gJayQx_36k31GMgsyRA/edit" },
+       { title: "GIT", url: "https://docs.google.com/document/d/1th9SjI_c5opWeV-35i1nibVd681dwHZvDbtj3-MdL9U/edit" },
+       { title: "Html", url: "https://docs.google.com/document/d/1ZoRwFsqvk1F23NUp03TKonEDJyUsiGvDX3Y_mdIwJJk/edit" },
+       { title: "Kotlin", url: "https://docs.google.com/document/d/1ULvtIXHhpbUZapNnJF1ffBee1HpxmKIvuZXrlsxWA8w/edit" },
+       { title: "Android Kotlin", url: "https://docs.google.com/document/d/1ejhf-FCMgFPYmuIOT3vWBcWJtEoJ8ri4PhD3uTtoQv0/edit" },
+       { title: "Embedded Android", url: "https://docs.google.com/document/d/1D0Cmk9_xdDRgXGdHyw0fLulCMOjm7anCgKuueZK6_q8/edit" },
+       { title: "AWS", url: "https://docs.google.com/document/d/1NHjzsLsWa8Y-VVIV3PvfUSUtsmiaR0kd94DFgHa9PNQ/edit" },
+       { title: "FFMPEG", url: "https://docs.google.com/document/d/1j96ipjGRoVnTF5IRdvMK9VnybOLqTHlS1GyLAHxwu7s/edit" },
+       { title: "RaspberryPi", url: "https://docs.google.com/document/d/1M_d8UMx68p7szNmA6nzR4FOzJ7DMKuCtHjlBTTTxyZ8/edit" },
+       { title: "RedHat Linux", url: "https://docs.google.com/document/d/18Cq_M1i07au5Ua_yXc2jYHDqr4Fs2vw7Xf9quRVJhWo/edit" },
+       { title: "CCNA", url: "https://docs.google.com/document/d/1Ccx3BOrVqBq2BBhlUgHvDzoT_PJ2OyWnMboHWTOoQsU/edit" },
+       { title: "Ethical Hacking", url: "https://docs.google.com/document/d/1RG48Q7Gr1QuXK6GwpkkduWCleVnTZ60WsuFdjc6VFXM/edit" },
+       { title: "FaceBook graph", url: "https://docs.google.com/document/d/1tN84uHItBDckqY8R9XlIsWcBWpI5sgOdFrEJMnX91m4/edit" },
+       { title: "Firebase", url: "https://docs.google.com/document/d/1Be9ItyzqfjxPJLy3raHxhJWoPtDl_Cz5bAnHqpHojTo/edit" }
+      ]
+      };
+
+  function getFavicon(url) {
+      try {
+          const domain = new URL(url).hostname;
+          return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+      } catch {
+          return "";
+      }
+  }
+
+  const content = document.getElementById("content");
+
+  for (let category in categories) {
+
+      const section = document.createElement("div");
+      section.className = "section";
+
+      const title = document.createElement("div");
+      title.className = "section-title";
+      title.textContent = category;
+
+      const grid = document.createElement("div");
+      grid.className = "grid";
+
+      categories[category].forEach(item => {
+
+          const link = document.createElement("a");
+          link.href = item.url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.style.textDecoration = "none";
+
+          const card = document.createElement("div");
+          card.className = "card";
+
+          const icon = document.createElement("img");
+          icon.src = getFavicon(item.url);
+          icon.onerror = function() {
+              this.style.display = "none";
+          };
+
+          const text = document.createElement("span");
+          text.textContent = item.title;
+
+          card.appendChild(icon);
+          card.appendChild(text);
+          link.appendChild(card);
+          grid.appendChild(link);
+      });
+
+      section.appendChild(title);
+      section.appendChild(grid);
+      content.appendChild(section);
+  }
+
+</script>
+
+</body>
+</html>
